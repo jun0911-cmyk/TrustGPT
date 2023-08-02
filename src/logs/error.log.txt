@@ -1,0 +1,2 @@
+[TIME : 1690996928248] [error LOG] : Sequelize Connection Error : SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+[TIME : 1691002465557] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
