@@ -24,3 +24,7 @@
 [TIME : 1691002217051] [database LOG] : Sequelize ORM과 연결되었습니다.
 [TIME : 1691002304337] [database LOG] : Sequelize ORM과 연결되었습니다.
 [TIME : 1691002365322] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691086861655] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691086928471] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691087065000] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691087079519] [database LOG] : Sequelize ORM과 연결되었습니다.

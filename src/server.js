@@ -4,14 +4,18 @@ const cookieParser = require("cookie-parser");
 const env = require("dotenv");
 const Logger = require("./middlewares/log.middleware.js");
 const database = require("./middlewares/sequelize.middleware.js");
+const openai = require("./middlewares/gpt.middleware.js");
 
 // 웹 서비스 라우터 import
 const indexRouter = require("./routes/index.route.js");
 const authRouter = require("./routes/auth.route.js");
+const gptRouter = require("./routes/gpt.route.js");
 
 // .env 환경변수 로드, 데이터베이스 연결
 env.config({ path: __dirname + "/config/.env" });
+
 database.connect();
+openai.connect();
 
 const app = express();
 const port = process.env.PORT;
@@ -31,6 +35,7 @@ app.use(consoleLogger("dev"));
 // 라우터 연결
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use("/gpt", gptRouter);
 app.use((req, res, next) => {
     res.status(404);
 });

@@ -38,3 +38,115 @@
 [TIME : 1691002217024] [server LOG] : TrustGPT 서버가 정상적으로 구동되었습니다, 접속 포트 : 4000
 [TIME : 1691002304317] [server LOG] : TrustGPT 서버가 정상적으로 구동되었습니다, 접속 포트 : 4000
 [TIME : 1691002365297] [server LOG] : TrustGPT 서버가 정상적으로 구동되었습니다, 접속 포트 : 4000
+[TIME : 1691086861606] [server LOG] : TrustGPT 서버가 정상적으로 구동되었습니다, 접속 포트 : 4000
+[TIME : 1691086928435] [server LOG] : TrustGPT 서버가 정상적으로 구동되었습니다, 접속 포트 : 4000
+[TIME : 1691086929032] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-davinci-001
+[TIME : 1691086929033] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : gpt-3.5-turbo-16k-0613
+[TIME : 1691086929034] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : curie-instruct-beta
+[TIME : 1691086929034] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-davinci-003
+[TIME : 1691086929033] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : davinci
+[TIME : 1691086929034] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : code-davinci-edit-001
+[TIME : 1691086929034] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-similarity-curie-001
+[TIME : 1691086929035] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-embedding-ada-002
+[TIME : 1691086929035] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : ada-code-search-text
+[TIME : 1691086929035] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-search-ada-query-001
+[TIME : 1691086929035] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : babbage-search-query
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : ada-similarity
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : gpt-3.5-turbo
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-search-ada-doc-001
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-search-babbage-query-001
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : code-search-ada-code-001
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : curie-search-document
+[TIME : 1691086929034] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : davinci-similarity
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-search-curie-doc-001
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : gpt-3.5-turbo-0301
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : babbage-search-document
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : babbage-code-search-text
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : davinci-instruct-beta
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : davinci-search-query
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-similarity-babbage-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : gpt-3.5-turbo-16k
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-davinci-002
+[TIME : 1691086929033] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-babbage-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : code-search-babbage-text-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : babbage
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : code-search-ada-text-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : ada-search-query
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-similarity-ada-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : ada-code-search-code
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : ada
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-search-davinci-doc-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-davinci-edit-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : davinci-search-document
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : curie-search-query
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : babbage-similarity
+[TIME : 1691086929037] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-search-davinci-query-001
+[TIME : 1691086929033] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-search-curie-query-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : whisper-1
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : curie
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : curie-similarity
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-ada-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : babbage-code-search-code
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : gpt-3.5-turbo-0613
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-search-babbage-doc-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-curie-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : code-search-babbage-code-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : text-similarity-davinci-001
+[TIME : 1691086929038] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : ada-search-document
+[TIME : 1691087064972] [server LOG] : TrustGPT 서버가 정상적으로 구동되었습니다, 접속 포트 : 4000
+[TIME : 1691087065661] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : 0:text-davinci-0011:text-search-curie-query-0012:davinci3:gpt-3.5-turbo-16k-06134:text-babbage-0015:curie-instruct-beta6:text-davinci-0037:davinci-similarity8:code-davinci-edit-0019:text-similarity-curie-00110:text-embedding-ada-00211:ada-code-search-text12:text-search-ada-query-00113:babbage-search-query14:ada-similarity15:gpt-3.5-turbo16:text-search-ada-doc-00117:text-search-babbage-query-00118:code-search-ada-code-00119:curie-search-document20:text-search-davinci-query-00121:text-search-curie-doc-00122:gpt-3.5-turbo-030123:babbage-search-document24:babbage-code-search-text25:whisper-126:gpt-3.5-turbo-16k27:davinci-instruct-beta28:davinci-search-query29:text-similarity-babbage-00130:text-davinci-00231:code-search-babbage-text-00132:babbage33:text-search-davinci-doc-00134:code-search-ada-text-00135:ada-search-query36:text-similarity-ada-00137:ada-code-search-code38:ada39:text-davinci-edit-00140:davinci-search-document41:curie-search-query42:babbage-similarity43:ada-search-document44:text-ada-00145:text-similarity-davinci-00146:curie47:curie-similarity48:gpt-3.5-turbo-061349:babbage-code-search-code50:code-search-babbage-code-00151:text-search-babbage-doc-00152:text-curie-001
+[TIME : 1691087079492] [server LOG] : TrustGPT 서버가 정상적으로 구동되었습니다, 접속 포트 : 4000
+[TIME : 1691087080143] [server LOG] : OpenAI API 연결에 성공하였습니다, 사용가능 API : 0:text-davinci-001
+1:text-search-curie-query-001
+2:davinci
+3:gpt-3.5-turbo-16k-0613
+4:text-babbage-001
+5:curie-instruct-beta
+6:text-davinci-003
+7:davinci-similarity
+8:code-davinci-edit-001
+9:text-similarity-curie-001
+10:text-embedding-ada-002
+11:ada-code-search-text
+12:text-search-ada-query-001
+13:babbage-search-query
+14:ada-similarity
+15:gpt-3.5-turbo
+16:text-search-ada-doc-001
+17:text-search-babbage-query-001
+18:code-search-ada-code-001
+19:curie-search-document
+20:text-search-davinci-query-001
+21:text-search-curie-doc-001
+22:gpt-3.5-turbo-0301
+23:babbage-search-document
+24:babbage-code-search-text
+25:whisper-1
+26:gpt-3.5-turbo-16k
+27:davinci-instruct-beta
+28:davinci-search-query
+29:text-similarity-babbage-001
+30:text-davinci-002
+31:code-search-babbage-text-001
+32:babbage
+33:text-search-davinci-doc-001
+34:code-search-ada-text-001
+35:ada-search-query
+36:text-similarity-ada-001
+37:ada-code-search-code
+38:ada
+39:text-davinci-edit-001
+40:davinci-search-document
+41:curie-search-query
+42:babbage-similarity
+43:ada-search-document
+44:text-ada-001
+45:text-similarity-davinci-001
+46:curie
+47:curie-similarity
+48:gpt-3.5-turbo-0613
+49:babbage-code-search-code
+50:code-search-babbage-code-001
+51:text-search-babbage-doc-001
+52:text-curie-001
+
