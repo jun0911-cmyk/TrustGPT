@@ -18,11 +18,8 @@ module.exports = class ChatService {
 
     isValidateFormat(gptOutput) {
         try {
-            const suggestions = JSON.parse(gptOutput);
-            if (!_.isArray(suggestions)) return false;
-            if (suggestions.length < 5) return false;
-            const isAllStrings = suggestions.every(_.isString);
-            if (!isAllStrings) return false;
+            if (typeof gptOutput != "string") return false;
+            if (gptOutput.length < 5) return false;
             return true;
         } catch (error) {
             loggger.errorLog("GPT message Validate Error : " + error);
@@ -33,7 +30,7 @@ module.exports = class ChatService {
 
     firstChatPrompt() {
         const systemPrompt = {
-            role: "system", "content": "You are a helpful assistant",
+            role: "system", "content": "You are a helpful assistant.",
         };
 
         const userPrompt = {
@@ -46,7 +43,8 @@ module.exports = class ChatService {
     }
 
     async chatPrompt(filename) {
-        const dataBuffer = await fs.readFileSync(filename);
+        const filepath = path.join(__dirname, "../chat/" + filename + ".json")
+        const dataBuffer = await fs.readFileSync(filepath);
         const dataJSON = dataBuffer.toString();
         const parseJSON = JSON.parse(dataJSON);
 

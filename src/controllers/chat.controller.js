@@ -19,7 +19,7 @@ module.exports =  async function gptChat(req, res, next) {
 
         const historyPath = await historyService.chatHistory(id);
 
-        if (historyPath == null) {
+        if (!historyPath.isExistBool) {
             prompt = chatService.firstChatPrompt();
         } else {
             prompt = await chatService.chatPrompt(id);
@@ -34,7 +34,11 @@ module.exports =  async function gptChat(req, res, next) {
             }).status(400);
         }
 
-        const isUpdated = await historyService.updateHistory(prompt, gptMessage);
+        const isUpdated = await historyService.updateHistory(
+            historyPath.filepath, 
+            prompt, 
+            gptMessage
+        );
 
         if (isUpdated) {
             return res.json({

@@ -1,2 +1,9 @@
 [TIME : 1690996928248] [error LOG] : Sequelize Connection Error : SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
 [TIME : 1691002465557] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691168628531] [error LOG] : GPT message Validate Error : SyntaxError: Unexpected token H in JSON at position 0
+[TIME : 1691168687882] [error LOG] : GPT message Validate Error : SyntaxError: Unexpected token H in JSON at position 0
+[TIME : 1691168724992] [error LOG] : GPT message Validate Error : ReferenceError: _ is not defined
+[TIME : 1691168912567] [error LOG] : GPT message Validate Error : SyntaxError: Unexpected token H in JSON at position 0
+[TIME : 1691169116452] [error LOG] : prompt history update error : ReferenceError: filename is not defined
+[TIME : 1691169334978] [error LOG] : prompt history update error : TypeError: prompt.push is not a function
+[TIME : 1691169364041] [error LOG] : prompt history update error : TypeError: prompt.push is not a function

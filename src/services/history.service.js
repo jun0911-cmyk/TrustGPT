@@ -12,13 +12,19 @@ module.exports = class HistoryService {
         const isExist = await fs.existsSync(filepath);
 
         if (isExist) {
-            return filepath;
+            return {
+                isExistBool: true,
+                filepath,
+            };
         } else {
-            return null;
+            return {
+                isExistBool: false,
+                filepath,
+            };
         }
     }
 
-    async updateHistory(prompt, messageObj) {
+    async updateHistory(filename, prompt, messageObj) {
         try {
             prompt.push(messageObj);
 
@@ -31,6 +37,20 @@ module.exports = class HistoryService {
             logger.errorLog("prompt history update error : " + err);
             
             return false;
+        }
+    }
+
+    async getChatHistory(id) {
+        const exist = await this.chatHistory(id);
+        
+        if (exist.isExistBool == true) {
+            const filepath = exist.filepath;
+            const dataBuffer = await fs.readFileSync(filepath);
+            const dataJSON = dataBuffer.toString();
+
+            return dataJSON;
+        } else {
+            return null;
         }
     }
 }
