@@ -42,8 +42,7 @@ module.exports = class ChatService {
         return prompt;
     }
 
-    async chatPrompt(filename) {
-        const filepath = path.join(__dirname, "../chat/" + filename + ".json")
+    async chatPrompt(filepath) {
         const dataBuffer = await fs.readFileSync(filepath);
         const dataJSON = dataBuffer.toString();
         const parseJSON = JSON.parse(dataJSON);

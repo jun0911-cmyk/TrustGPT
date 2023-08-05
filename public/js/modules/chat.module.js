@@ -9,9 +9,10 @@ export default class Chat {
 
     async chatSend() {
         const request = new Request();
+        const chatID = location.search.split("=")[1];
 
         if (this.message) {
-            request.setURL("/gpt/chat");
+            request.setURL("/gpt/chat?chatID=" + chatID);
             request.setMethod("POST");
             request.setBody({ message: this.message });
             request.setHeader({ "Content-Type": "application/json" });
@@ -22,8 +23,9 @@ export default class Chat {
 
     async getHistory() {
         const request = new Request();
+        const chatID = location.search.split("=")[1];
 
-        request.setURL("/gpt/history");
+        request.setURL("/gpt/history?chatID=" + chatID);
         request.setMethod("GET");
             
         return await request.send();

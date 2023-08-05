@@ -4,6 +4,7 @@ const idGenerator = require("../middlewares/idGenerate.middleware.js");
 
 module.exports = async function historyGet(req, res, next) {
     const username = req.username;
+    const chatID = req.query.chatID;
 
     const userService = new UserService();
     const historyService = new HistoryService();
@@ -11,7 +12,7 @@ module.exports = async function historyGet(req, res, next) {
     const user = await userService.findUserByName(username);
     const id = idGenerator(user.dataValues.id);
 
-    const historyJSON = await historyService.getChatHistory(id);
+    const historyJSON = await historyService.getChatHistory(id, chatID);
 
     if (historyJSON) {
         return res.json({

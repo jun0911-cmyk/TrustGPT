@@ -5,17 +5,22 @@ const env = require("dotenv");
 const Logger = require("./middlewares/log.middleware.js");
 const database = require("./middlewares/sequelize.middleware.js");
 const openai = require("./middlewares/gpt.middleware.js");
+const APIService = require("./services/api.service.js");
 
 // 웹 서비스 라우터 import
 const indexRouter = require("./routes/index.route.js");
 const authRouter = require("./routes/auth.route.js");
 const gptRouter = require("./routes/gpt.route.js");
 
+// 내부 TextRank API 연결 테스트
+const apiService = new APIService();
+
 // .env 환경변수 로드, 데이터베이스 연결
 env.config({ path: __dirname + "/config/.env" });
 
 database.connect();
 openai.connect();
+apiService.pingTest();
 
 const app = express();
 const port = process.env.PORT;
@@ -41,10 +46,12 @@ app.use((req, res, next) => {
 });
 
 // 웹 서비스 실행
-app.listen(port, (err) => {
+app.listen(port, async (err) => {
     const logger = new Logger();
+    const apiMessage = await apiService.pingTest()
 
     if (err) return logger.errorLog(err);
-    
+
+    logger.serverLog("TexrRank 내부 API 서버가 정상적으로 구동중입니다, API 서버 상태 : " + apiMessage);
     logger.serverLog("TrustGPT 서버가 정상적으로 구동되었습니다, 접속 포트 : " + port);
 });

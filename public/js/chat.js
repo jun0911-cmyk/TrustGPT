@@ -27,6 +27,7 @@ sendBtn.addEventListener("click", async () => {
     const result = await chat.chatSend();
 
     if (result.isMessage) {
+        history.pushState({}, "", "/?chatID=" + result.chat_id);
         chat.addMessage(result.message, messageContainer);
     } else {
         console.log("failure");
