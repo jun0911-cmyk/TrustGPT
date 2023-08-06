@@ -28,7 +28,15 @@ sendBtn.addEventListener("click", async () => {
 
     if (result.isMessage) {
         history.pushState({}, "", "/?chatID=" + result.chat_id);
-        chat.addMessage(result.message, messageContainer);
+
+        const searchResult = await chat.search(result.words, result.keywords, message);
+        
+        if (searchResult.isSearched) {
+            chat.addMessage(result.message, messageContainer);
+        } else {
+            console.log("failure");
+        }
+
     } else {
         console.log("failure");
     }

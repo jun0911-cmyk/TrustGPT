@@ -30,11 +30,11 @@ module.exports = class ChatService {
 
     firstChatPrompt() {
         const systemPrompt = {
-            role: "system", "content": "You are a helpful assistant.",
+            role: "system", content: "You are a helpful assistant.",
         };
 
         const userPrompt = {
-            role: "user", "content": this.message,
+            role: "user", content: this.message,
         };
 
         const prompt = [systemPrompt, userPrompt];

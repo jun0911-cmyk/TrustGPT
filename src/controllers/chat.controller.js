@@ -55,12 +55,13 @@ module.exports =  async function gptChat(req, res, next) {
             return res.json({
                 isMessage: true,
                 chat_id: historyPath.chat_id,
+                words: word,
+                keywords: keyword,
                 message: gptMessage,
             }).status(200);
         } else {
             return res.json({
                 isMessage: false,
-                chat_id: historyPath.chat_id,
                 message: null
             }).status(400);
         }
