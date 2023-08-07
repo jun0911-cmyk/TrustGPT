@@ -7,3 +7,23 @@
 [TIME : 1691169116452] [error LOG] : prompt history update error : ReferenceError: filename is not defined
 [TIME : 1691169334978] [error LOG] : prompt history update error : TypeError: prompt.push is not a function
 [TIME : 1691169364041] [error LOG] : prompt history update error : TypeError: prompt.push is not a function
+[TIME : 1691433955977] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691433955977] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691433956183] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691433956183] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691433956461] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691433956461] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691433956662] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691433956663] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691433956865] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691433956865] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691434115858] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691434115859] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691434116065] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691434116066] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691434116265] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691434116265] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691434116478] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691434116479] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691434116685] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
+[TIME : 1691434116685] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')

@@ -33,6 +33,9 @@ def getword():
     if (sents):
         wordResult = textrankAPI.getImportantWord(sents)
 
+        if (not wordResult):
+            return "API request ERROR..."
+
         return jsonify({
             "words": wordResult,
         })
@@ -50,6 +53,9 @@ def getKeyword():
 
     if (sents):
         keywordResult = textrankAPI.getImportantKeyword(sents)
+
+        if (not keywordResult):
+            return "API request ERROR..."
 
         return jsonify({
             "keywords": keywordResult,

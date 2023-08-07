@@ -1,45 +1,38 @@
 const UserService = require("../services/user.service.js");
+const SearchService = require("../services/search.service.js");
 const HistoryService = require("../services/history.service.js");
-const SummaryService = require("../services/summary.service.js");
-const ChatService = require("../services/chat.service.js");
+const idGenerator = require("../middlewares/idGenerate.middleware.js");
 
 module.exports = async function search(req, res, next) {
-    const searchObj = req.body;
+    const data = req.body;
     const chatID = req.query.chatID;
     const username = req.username;
-    const words = searchObj.words;
-    const keywords = searchObj.keywords;
-    const userMessage = searchObj.userMessage;
+    const searchObj = data.search;
 
-    let summaryArray = [];
+    let searchResult = [];
 
-    if (words && keywords && userMessage && chatID) {
+    if (searchObj && chatID) {
         const userService = new UserService();
         const historyService = new HistoryService();
-        const chatService = new ChatService();
+        const searchService = new SearchService();
 
         const user = await userService.findUserByName(username);
-        const history = await historyService.chatHistory(user.dataValues.id, chatID);
+        const id = idGenerator(user.dataValues.id);
+        
+        const history = await historyService.chatHistory(id, chatID);
 
         if (history.isExistBool) {
-            const userSummaryService = new SummaryService();
-            const userSummaryPrompt = userSummaryService.getSummaryPrompt(userMessage);
+            for (let i = 0; i < searchObj.length; i++) {
+                const query = searchObj[i].content;
+                
+                if (searchService.isQueryValidate(query)) {
+                    const response = await searchService.search(query);
 
-            const userChatResult = await chatService.sendChat(userSummaryPrompt);
-
-            if (userChatResult) summaryArray.push(userChatResult);
-
-            for (let i = 0; i < words.length; i++) {
-                const summaryService = new SummaryService();
-                const wordMessage = words[i]["sent"];
-                const summaryPrompt = summaryService.getSummaryPrompt(wordMessage);
-
-                const chatResult = await chatService.sendChat(summaryPrompt);
-
-                if (chatResult) summaryArray.push(chatResult);
+                    if (response != null) searchResult.push(response);
+                }
             }
 
-            console.log(summaryArray);
+            console.log(searchResult);
         } else {
             return res.json({
                 isSearched: false,

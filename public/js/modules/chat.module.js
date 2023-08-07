@@ -31,16 +31,31 @@ export default class Chat {
         return await request.send();
     }
 
-    async search(words, keywords, userMessage) {
+    async summary(words, keywords, userMessage) {
+        const request = new Request();
+        const chatID = location.search.split("=")[1];
+
+        request.setURL("/gpt/summary?chatID=" + chatID);
+        request.setMethod("POST");
+        request.setBody({ 
+            words: words, 
+            keywords: keywords, 
+            userMessage: userMessage 
+        });
+
+        request.setHeader({ "Content-Type": "application/json" });
+
+        return await request.send();
+    }
+
+    async search(queryArray) {
         const request = new Request();
         const chatID = location.search.split("=")[1];
 
         request.setURL("/gpt/search?chatID=" + chatID);
         request.setMethod("POST");
         request.setBody({ 
-            words: words, 
-            keywords: keywords, 
-            userMessage: userMessage 
+            search: queryArray, 
         });
 
         request.setHeader({ "Content-Type": "application/json" });
