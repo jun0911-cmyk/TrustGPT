@@ -1,6 +1,7 @@
 const UserService = require("../services/user.service.js");
 const SearchService = require("../services/search.service.js");
 const HistoryService = require("../services/history.service.js");
+const SearchDBService = require("../services/search_db.service.js");
 const idGenerator = require("../middlewares/idGenerate.middleware.js");
 
 module.exports = async function search(req, res, next) {
@@ -9,12 +10,11 @@ module.exports = async function search(req, res, next) {
     const username = req.username;
     const searchObj = data.search;
 
-    let searchResult = [];
-
     if (searchObj && chatID) {
         const userService = new UserService();
         const historyService = new HistoryService();
         const searchService = new SearchService();
+        const searchDBService = new SearchDBService();
 
         const user = await userService.findUserByName(username);
         const id = idGenerator(user.dataValues.id);
@@ -28,11 +28,24 @@ module.exports = async function search(req, res, next) {
                 if (searchService.isQueryValidate(query)) {
                     const response = await searchService.search(query);
 
-                    if (response != null) searchResult.push(response);
+                    if (response != null) {
+                        for (let j = 0; j < response.length; j++) {
+                            const result = response[j];
+
+                            await searchDBService.insert(
+                                result.title, 
+                                result.link, 
+                                result.displayLink, 
+                                query,
+                            );
+                        }
+                    }
                 }
             }
 
-            console.log(searchResult);
+            return res.json({
+                isSearched: true,
+            }).status(200);
         } else {
             return res.json({
                 isSearched: false,

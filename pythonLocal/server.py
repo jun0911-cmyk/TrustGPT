@@ -48,20 +48,27 @@ def getKeyword():
 
     content = data["content"]
     role = data["role"]
+    
+    try:
+        isSearch = data["isSearch"]
+    except:
+        isSearch = None
 
     sents = textrankAPI.splitContent(content)
 
-    if (sents):
+    if (sents and isSearch == None):
         keywordResult = textrankAPI.getImportantKeyword(sents)
-
-        if (not keywordResult):
-            return "API request ERROR..."
-
-        return jsonify({
-            "keywords": keywordResult,
-        })
+    elif (isSearch == True):
+        keywordResult = textrankAPI.getImportantKeyword([content])
     else:
         return "API request ERROR..."
+
+    if (not keywordResult):
+        return "API request ERROR..."
+
+    return jsonify({
+        "keywords": keywordResult,
+    })
     
 
 if __name__ == "__main__":

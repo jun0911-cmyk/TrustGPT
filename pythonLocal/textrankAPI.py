@@ -84,5 +84,4 @@ def getImportantKeyword(sents):
 
         return keywordSents
     except:
-        print("[+] 핵심 키워드 추출에 실패하였습니다.")
         return None

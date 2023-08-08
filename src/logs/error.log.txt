@@ -27,3 +27,53 @@
 [TIME : 1691434116479] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
 [TIME : 1691434116685] [error LOG] : RequestService, API Request Error : AxiosError: Request failed with status code 403
 [TIME : 1691434116685] [error LOG] : Google Custom Search API Error : TypeError: Cannot read properties of null (reading 'data')
+[TIME : 1691523465848] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691523465861] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691523489732] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691523489738] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691523550481] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691523550491] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691523566164] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691523566165] [error LOG] : JWT Verify Error : JsonWebTokenError: jwt malformed
+[TIME : 1691523632402] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523632937] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523633447] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523634055] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523634742] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523635427] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523813028] [error LOG] : sequelize searchDB insert error : TypeError: Cannot read properties of undefined (reading 'create')
+[TIME : 1691523813554] [error LOG] : sequelize searchDB insert error : TypeError: Cannot read properties of undefined (reading 'create')
+[TIME : 1691523814001] [error LOG] : sequelize searchDB insert error : TypeError: Cannot read properties of undefined (reading 'create')
+[TIME : 1691523814854] [error LOG] : sequelize searchDB insert error : TypeError: Cannot read properties of undefined (reading 'create')
+[TIME : 1691523815401] [error LOG] : sequelize searchDB insert error : TypeError: Cannot read properties of undefined (reading 'create')
+[TIME : 1691523912882] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523913468] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523914100] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523914863] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691523915325] [error LOG] : sequelize searchDB insert error : SequelizeValidationError: notNull Violation: search.title cannot be null,
+notNull Violation: search.link cannot be null,
+notNull Violation: search.origin_host cannot be null
+[TIME : 1691524105945] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
+[TIME : 1691524107035] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
+[TIME : 1691524107039] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
+[TIME : 1691524107045] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
