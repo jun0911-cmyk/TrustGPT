@@ -3,6 +3,7 @@ const path = require("path");
 const Logger = require("../middlewares/log.middleware.js");
 const idGenerator = require("../middlewares/idGenerate.middleware.js");
 const uuidv4 = require("uuid4");
+const glob = require("glob");
 
 const logger = new Logger();
 
@@ -64,6 +65,32 @@ module.exports = class HistoryService {
             const dataJSON = dataBuffer.toString();
 
             return dataJSON;
+        } else {
+            return null;
+        }
+    }
+
+    async getChatHistoryList(id) {
+        const filename = `${id}_*`;
+        const filepath = path.join(__dirname, "../chat/" + filename);
+
+        const filelist = await glob.globSync(filepath);
+
+        let chat_titles = [];
+
+        if (filelist != []) {
+            for (let i = 0; i < filelist.length; i++) {
+                const history_chatID = filelist[i].split("_")[1].split(".")[0];
+                const filedata = await this.getChatHistory(id, history_chatID);
+                const fileJSON = JSON.parse(filedata);
+
+                chat_titles.push({
+                    title: fileJSON[1].content,
+                    chatID: history_chatID,
+                });
+            }
+
+            return chat_titles;
         } else {
             return null;
         }

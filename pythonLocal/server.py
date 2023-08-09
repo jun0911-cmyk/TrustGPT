@@ -30,6 +30,11 @@ def getword():
 
     sents = textrankAPI.splitContent(content)
 
+    if (sents == "No Split"):
+        return jsonify({
+            "words": [],
+        })
+
     if (sents):
         wordResult = textrankAPI.getImportantWord(sents)
 
@@ -55,6 +60,11 @@ def getKeyword():
         isSearch = None
 
     sents = textrankAPI.splitContent(content)
+
+    if (sents == "No Split"):
+        return jsonify({
+            "keywords": [],
+        })
 
     if (sents and isSearch == None):
         keywordResult = textrankAPI.getImportantKeyword(sents)

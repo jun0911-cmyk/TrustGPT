@@ -2,6 +2,7 @@ const express = require("express");
 const consoleLogger = require("morgan");
 const cookieParser = require("cookie-parser");
 const env = require("dotenv");
+const cors = require("cors");
 const Logger = require("./middlewares/log.middleware.js");
 const database = require("./middlewares/sequelize.middleware.js");
 const openai = require("./middlewares/gpt.middleware.js");

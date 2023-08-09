@@ -13,6 +13,7 @@ module.exports = async function summary(req, res, next) {
     const userMessage = searchObj.userMessage;
 
     let summaryArray = [];
+    let originArray = [];
 
     if (words && keywords && userMessage && chatID) {
         const userService = new UserService();
@@ -29,7 +30,10 @@ module.exports = async function summary(req, res, next) {
             const userSummaryPrompt = await userSummaryService.getSummaryPrompt(userMessage);
             const userChatResult = await chatService.sendChat(userSummaryPrompt);
 
-            if (userChatResult) summaryArray.push(userChatResult);
+            if (userChatResult) {
+                summaryArray.push(userChatResult);
+                originArray.push(userMessage);
+            }
 
             for (let i = 0; i < words.words.length; i++) {
                 const summaryService = new SummaryService();
@@ -40,6 +44,7 @@ module.exports = async function summary(req, res, next) {
 
                 if (chatResult) {
                     summaryArray.push(chatResult);
+                    originArray.push(wordMessage);
                 };
             }
 
@@ -47,6 +52,7 @@ module.exports = async function summary(req, res, next) {
                 return res.json({
                     isSummaryed: true,
                     summaryKeyword: summaryArray,
+                    originArray: originArray,
                 }).status(200);
             }
         } else {

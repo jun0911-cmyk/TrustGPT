@@ -9,7 +9,7 @@ def splitContent(content):
         sentences = content.split("\n")
 
         if (len(sentences) <= 1 or len(sentences) == 0):
-            return None
+            return "No Split"
 
         sentences = [sentence.strip() for sentence in sentences if sentence.strip()]
         sents = []
@@ -20,13 +20,13 @@ def splitContent(content):
                     sents.append(word)
 
         if (len(sents) <= 5):
-            return None
+            return "No Split"
 
         print("[+] 문장을 리스트 단위로 변환을 완료하였습니다.")
 
         return sents
     except:
-        return None
+        return "No Split"
 
 def komoran_tokenizer(sent):
     words = komoran.pos(sent, join=True)

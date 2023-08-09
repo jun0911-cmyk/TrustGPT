@@ -21,6 +21,8 @@ module.exports = async function search(req, res, next) {
         
         const history = await historyService.chatHistory(id, chatID);
 
+        let searchResult = {};
+
         if (history.isExistBool) {
             for (let i = 0; i < searchObj.length; i++) {
                 const query = searchObj[i].content;
@@ -31,6 +33,10 @@ module.exports = async function search(req, res, next) {
                     if (response != null) {
                         for (let j = 0; j < response.length; j++) {
                             const result = response[j];
+
+                            if (typeof searchResult[query] != "object") searchResult[query] = [];
+
+                            searchResult[query].push({ title: result.title, link: result.link, origin: result.displayLink, keyword: query });
 
                             await searchDBService.insert(
                                 result.title, 
@@ -45,6 +51,7 @@ module.exports = async function search(req, res, next) {
 
             return res.json({
                 isSearched: true,
+                search: searchResult,
             }).status(200);
         } else {
             return res.json({
