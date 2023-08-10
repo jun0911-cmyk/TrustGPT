@@ -171,3 +171,11 @@
 [TIME : 1691606782212] [database LOG] : Sequelize ORM과 연결되었습니다.
 [TIME : 1691606833005] [database LOG] : Sequelize ORM과 연결되었습니다.
 [TIME : 1691606996982] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691686000722] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691690648712] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691691267251] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691693536353] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691693558955] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691693573087] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691693622868] [database LOG] : Sequelize ORM과 연결되었습니다.
+[TIME : 1691693659179] [database LOG] : Sequelize ORM과 연결되었습니다.

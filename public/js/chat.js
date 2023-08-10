@@ -1,4 +1,5 @@
 import Chat from "./modules/chat.module.js";
+import Vote from "./modules/vote.module.js";
 
 const sendBtn = document.getElementById("send-button");
 const messageContainer = document.getElementById("chat-messages");
@@ -58,9 +59,11 @@ sendBtn.addEventListener("click", async () => {
         const queryArray = summaryResult.summaryKeyword;
         const searchResult = await chat.search(queryArray);
 
+        console.log(summaryResult.originArray, searchResult.search)
+
         if (searchResult.search) {
             $("#chat-search").show();
-            
+
             searchContainer.innerHTML = "";
 
             Object.keys(searchResult.search).forEach((key) => {
@@ -69,13 +72,37 @@ sendBtn.addEventListener("click", async () => {
                 for (let i = 0; i < searchData.length; i++) {
                     const searchObj = searchData[i];
 
+                    let className = "first-button-container";
+
+                    if (i != 0) className = "button-container";
+
                     searchContainer.innerHTML += `
-                    <iframe id="${searchObj.link}" src="${searchObj.link}" frameborder="1" style="width: 100%; height: 40%; border: 2px solid black;" class="sitemapIframe"></iframe>
+                    <div class="search-data">
+                        <div class="${className}">
+                            <button type="button" id="vote-btn" class="btn btn-info">Trust this link</button>
+                            <button type="button" class="btn btn-success"><a href="${searchObj.link}">Visit To Page</a></button>
+                        </div>
+                        <div class="frame-container"><iframe id="${searchObj.link}" src="${searchObj.link}" frameborder="1" style="width: 100%; height: 100%; border: 2px solid black;" class="sitemapIframe"></iframe></div>
+                    </div>
                     `
                 }
             });
+
+            const voteBtn = document.getElementById("vote-btn");
+
+            if (voteBtn) {
+                $(document).on("click", "#vote-btn", async function () {
+                    const link = $(this).parent().parent().children().children()[2].id;
+
+                    const vote = new Vote(link);
+                    const voteResult = await vote.voteSend();
+
+                    if (voteResult.isVoted) console.log("success");
+                    else console.log("failure");
+                });
+            }
         }
     } else {
         console.log("failure");
     }
-})
+});

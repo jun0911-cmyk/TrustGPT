@@ -83,3 +83,39 @@ body {
     align-items: center;
     border: 2px solid rgb(255, 0, 0);
 }
+.search-data {
+    width: 100%;
+    height: 40%;
+}
+.search-data .frame-container {
+    width: 100%;
+    height: 100%;
+}
+.search-data .first-button-container {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    background-color: rgb(36, 51, 64);
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 1rem;
+}
+.search-data .button-container {
+    margin-top: 4.5rem;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    background-color: rgb(36, 51, 64);
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 1rem;
+}
+.search-data button {
+    margin-left: 20px;
+}
+.search-data button a {
+    text-decoration: none;
+    color: #fff;
+}

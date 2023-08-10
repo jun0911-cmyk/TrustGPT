@@ -12,6 +12,7 @@ const APIService = require("./services/api.service.js");
 const indexRouter = require("./routes/index.route.js");
 const authRouter = require("./routes/auth.route.js");
 const gptRouter = require("./routes/gpt.route.js");
+const voteRouter = require("./routes/vote.route.js");
 
 // 내부 TextRank API 연결 테스트
 const apiService = new APIService();
@@ -41,6 +42,7 @@ app.use(consoleLogger("dev"));
 // 라우터 연결
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use("/vote", voteRouter);
 app.use("/gpt", gptRouter);
 app.use((req, res, next) => {
     res.status(404);
