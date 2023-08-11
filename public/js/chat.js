@@ -49,7 +49,7 @@ sendBtn.addEventListener("click", async () => {
         chat.addMessage(result.message, messageContainer);
 
         const summaryResult = await chat.summary(result.words, result.keywords, message);
-        
+        /* 
         if (!summaryResult.isSummaryed) {
             console.log("failure");
 
@@ -58,8 +58,6 @@ sendBtn.addEventListener("click", async () => {
 
         const queryArray = summaryResult.summaryKeyword;
         const searchResult = await chat.search(queryArray);
-
-        console.log(summaryResult.originArray, searchResult.search)
 
         if (searchResult.search) {
             $("#chat-search").show();
@@ -101,7 +99,7 @@ sendBtn.addEventListener("click", async () => {
                     else console.log("failure");
                 });
             }
-        }
+        } */
     } else {
         console.log("failure");
     }

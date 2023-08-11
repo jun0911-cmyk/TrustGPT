@@ -72,6 +72,6 @@ export default class Chat {
 
         const messageBox = document.getElementById(messageCount);
 
-        messageBox.innerText = gptMessage;
+        messageBox.innerHTML = gptMessage;
     }
 }

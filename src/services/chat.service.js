@@ -42,6 +42,35 @@ module.exports = class ChatService {
         return prompt;
     }
 
+    generateMessage(words, message) {
+        let generate_messages = [];
+        let result_message = "";
+
+        for (let i = 0; i < words.words.length; i++) {
+            const word = words.words[i].sent;
+
+            generate_messages.push({
+                word: word, 
+                generateWord: "<p class='emphasis'>" + word + "</p>",
+            });
+;       }
+
+        for (let j = 0; j < generate_messages.length; j++) {
+            const generate_message = generate_messages[j];
+
+            if (result_message == "") {
+                result_message = message.content.replaceAll(generate_message.word + ". ", generate_message.generateWord);
+            } else {
+                result_message = result_message.replaceAll(generate_message.word + ".", generate_message.generateWord);
+            }
+        }
+
+        return {
+            role: "assistant",
+            content: result_message
+        };
+    }
+
     async chatPrompt(filepath) {
         const dataBuffer = await fs.readFileSync(filepath);
         const dataJSON = dataBuffer.toString();

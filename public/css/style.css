@@ -119,3 +119,7 @@ body {
     text-decoration: none;
     color: #fff;
 }
+.emphasis {
+    font-weight: 900;
+    color: black;
+}

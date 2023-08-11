@@ -25,6 +25,8 @@ module.exports =  async function gptChat(req, res, next) {
         const user = await userService.findUserByName(username);
         const id = idGenerator(user.dataValues.id);
 
+        let generateMessage = "";
+
         const historyPath = await historyService.chatHistory(id, chatID);
 
         if (!historyPath.isExistBool) {
@@ -45,10 +47,15 @@ module.exports =  async function gptChat(req, res, next) {
         const word = await apiService.getWord(gptMessage);
         const keyword = await apiService.getKeyword(gptMessage);
 
+        if (!word || !keyword) return res.json({ isMessage: false, message: null });
+
+        if (word.words.length == 0) generateMessage = gptMessage;
+        else generateMessage = chatService.generateMessage(word, gptMessage);
+
         const isUpdated = await historyService.updateHistory(
             historyPath.filepath, 
             prompt, 
-            gptMessage
+            generateMessage
         );
 
         if (isUpdated && (word && keyword)) {
@@ -57,7 +64,7 @@ module.exports =  async function gptChat(req, res, next) {
                 chat_id: historyPath.chat_id,
                 words: word,
                 keywords: keyword,
-                message: gptMessage,
+                message: generateMessage,
             }).status(200);
         } else {
             return res.json({
