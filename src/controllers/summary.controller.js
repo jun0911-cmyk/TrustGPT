@@ -8,51 +8,26 @@ module.exports = async function summary(req, res, next) {
     const searchObj = req.body;
     const chatID = req.query.chatID;
     const username = req.username;
-    const words = searchObj.words;
-    const keywords = searchObj.keywords;
-    const userMessage = searchObj.userMessage;
+    const word = searchObj.word;
 
-    let summaryArray = [];
-    let originArray = [];
-
-    if (words && keywords && userMessage && chatID) {
+    if (word && chatID) {
         const userService = new UserService();
         const historyService = new HistoryService();
         const chatService = new ChatService();
+        const summaryService = new SummaryService();
 
         const user = await userService.findUserByName(username);
         const id = idGenerator(user.dataValues.id);
         const history = await historyService.chatHistory(id, chatID);
 
         if (history.isExistBool) {
-            const userSummaryService = new SummaryService();
+            const summaryPrompt = await summaryService.getSummaryPrompt(userMessage);
+            const chatResult = await chatService.sendChat(summaryPrompt);
 
-            const userSummaryPrompt = await userSummaryService.getSummaryPrompt(userMessage);
-            const userChatResult = await chatService.sendChat(userSummaryPrompt);
-
-            if (userChatResult) {
-                summaryArray.push(userChatResult);
-                originArray.push(userMessage);
-            }
-
-            for (let i = 0; i < words.words.length; i++) {
-                const summaryService = new SummaryService();
-                const wordMessage = words.words[i]["sent"];
-
-                const summaryPrompt = await summaryService.getSummaryPrompt(wordMessage);
-                const chatResult = await chatService.sendChat(summaryPrompt);
-
-                if (chatResult) {
-                    summaryArray.push(chatResult);
-                    originArray.push(wordMessage);
-                };
-            }
-
-            if (summaryArray) {
+            if (chatResult) {
                 return res.json({
                     isSummaryed: true,
-                    summaryKeyword: summaryArray,
-                    originArray: originArray,
+                    summaryKeyword: chatResult,
                 }).status(200);
             }
         } else {

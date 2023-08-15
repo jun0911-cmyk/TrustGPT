@@ -24,27 +24,25 @@ module.exports = async function search(req, res, next) {
         let searchResult = {};
 
         if (history.isExistBool) {
-            for (let i = 0; i < searchObj.length; i++) {
-                const query = searchObj[i].content;
-                
-                if (searchService.isQueryValidate(query)) {
-                    const response = await searchService.search(query);
+            const query = searchObj.content;
+            
+            if (searchService.isQueryValidate(query)) {
+                const response = await searchService.search(query);
 
-                    if (response != null) {
-                        for (let j = 0; j < response.length; j++) {
-                            const result = response[j];
+                if (response != null) {
+                    for (let i = 0; i < response.length; i++) {
+                        const result = response[i];
 
-                            if (typeof searchResult[query] != "object") searchResult[query] = [];
+                        if (typeof searchResult[query] != "object") searchResult[query] = [];
 
-                            searchResult[query].push({ title: result.title, link: result.link, origin: result.displayLink, keyword: query });
+                        searchResult[query].push({ title: result.title, link: result.link, origin: result.displayLink, keyword: query });
 
-                            await searchDBService.insert(
-                                result.title, 
-                                result.link, 
-                                result.displayLink, 
-                                query,
-                            );
-                        }
+                        await searchDBService.insert(
+                            result.title, 
+                            result.link, 
+                            result.displayLink, 
+                            query,
+                        );
                     }
                 }
             }
