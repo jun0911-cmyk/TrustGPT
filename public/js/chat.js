@@ -6,8 +6,14 @@ const sendBtn = document.getElementById("send-button");
 const messageContainer = document.getElementById("chat-messages");
 const historyContainer = document.getElementById("history-list");
 const searchContainer = document.getElementById("chat-search");
+const topContainer = document.getElementById("top-search");
+
+const search = new Search();
+
+search.setEvent();
 
 $("#chat-search").hide();
+$("#top-search").hide();
 
 document.addEventListener("DOMContentLoaded", async () => {
     const history = new Chat();
@@ -51,6 +57,7 @@ sendBtn.addEventListener("click", async () => {
     if (result.isMessage) {
         history.pushState({}, "", "/?chatID=" + result.chat_id);
         chat.addMessage(result.message, messageContainer);
+        search.setEvent();
 
         const summaryResult = await chat.summary(message);
         
@@ -63,10 +70,12 @@ sendBtn.addEventListener("click", async () => {
         const summaryWord = summaryResult.summaryKeyword;
         const searchResult = await chat.search(summaryWord);
 
-        if (searchResult.search) {
+        if (searchResult.search && searchResult.top) {
             $("#chat-search").show();
+            $("#top-search").show();
 
             search.appendContent(searchContainer, searchResult.search);
+            search.appendContent(topContainer, searchResult.top);
             vote.setVoteEvent();
         }
     } else {

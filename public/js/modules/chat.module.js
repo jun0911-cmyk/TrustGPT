@@ -31,16 +31,14 @@ export default class Chat {
         return await request.send();
     }
 
-    async summary(words, keywords, userMessage) {
+    async summary(word) {
         const request = new Request();
         const chatID = location.search.split("=")[1];
 
         request.setURL("/gpt/summary?chatID=" + chatID);
         request.setMethod("POST");
         request.setBody({ 
-            words: words, 
-            keywords: keywords, 
-            userMessage: userMessage 
+            word: word, 
         });
 
         request.setHeader({ "Content-Type": "application/json" });

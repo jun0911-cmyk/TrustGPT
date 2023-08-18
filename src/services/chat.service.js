@@ -51,7 +51,7 @@ module.exports = class ChatService {
 
             generate_messages.push({
                 word: word, 
-                generateWord: "<p class='emphasis'>" + word + "</p>",
+                generateWord: "<p class='emphasis'><a class='import_word' id='import_word'>" + word + "</a></p>",
             });
 ;       }
 

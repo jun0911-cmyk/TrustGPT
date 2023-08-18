@@ -42,6 +42,19 @@ module.exports = class VoteService {
         }
     }
 
+    async topRankVote() {
+        try {
+            return await models.vote.findAll({ 
+                order: [["vote_cnt", "DESC"]],
+                limit: 10,
+            });
+        } catch (err) {
+            logger.errorLog("Sequelize findAll Error : " + err);
+
+            return null;
+        }
+    }
+
     async updateVote(link, vote_cnt, voter="{}") {
         try {
             return await models.vote.update(

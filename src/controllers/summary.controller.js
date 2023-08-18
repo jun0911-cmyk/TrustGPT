@@ -21,7 +21,7 @@ module.exports = async function summary(req, res, next) {
         const history = await historyService.chatHistory(id, chatID);
 
         if (history.isExistBool) {
-            const summaryPrompt = await summaryService.getSummaryPrompt(userMessage);
+            const summaryPrompt = await summaryService.getSummaryPrompt(word);
             const chatResult = await chatService.sendChat(summaryPrompt);
 
             if (chatResult) {
