@@ -26,7 +26,7 @@ module.exports = async function vote(req, res, next) {
         const voter = vote.dataValues.voter;
 
         const updatedVoter = voteService.updateVoter(username, voter);
-        const updatedOrigin = originService.updateOrigin();
+        const updatedOrigin = originService.updateOrigin(username);
 
         if (!updatedVoter || !updatedOrigin) return res.json({ isVoted: false }).status(400);
 

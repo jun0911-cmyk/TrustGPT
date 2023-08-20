@@ -4,14 +4,14 @@ import Vote from "./vote.module.js";
 export default class Search {
     constructor () {}
 
-    setTemplate(link, vote_cnt, className) {
+    setTemplate(link, isVerify, vote_cnt, className) {
         return `
         <div class="search-data">
             <div class="${className}">
                 <button type="button" id="vote-btn" class="btn btn-info">Trust this link</button>
                 <button type="button" class="btn btn-success"><a href="${link}">Visit To Page</a></button>
                 <div class="vote-container">
-                    <p>${vote_cnt} People trust this link</p>
+                    <p>${vote_cnt} People trust this link ${isVerify ? "[THIS LINK TRUSTING!]" : ""}</p>
                 </div>
             </div>
             <div class="frame-container"><iframe id="${link}" src="${link}" frameborder="1" style="width: 100%; height: 100%; border: 2px solid black;" class="sitemapIframe"></iframe></div>
@@ -29,7 +29,7 @@ export default class Search {
 
             if (i != 0) className = "button-container";
 
-            container.innerHTML += this.setTemplate(searchObj.link, searchObj.vote_cnt, className);
+            container.innerHTML += this.setTemplate(searchObj.link, searchObj.verify_origin, searchObj.vote_cnt, className);
         }
     }
 
@@ -37,6 +37,7 @@ export default class Search {
         $(document).on("click", ".import_word", async function() {
             const importWord = $(this)[0].innerText;
             const searchContainer = document.getElementById("chat-search");
+            const topContainer = document.getElementById("top-search");
 
             const search = new Search();
             const chat = new Chat(importWord);
@@ -55,8 +56,10 @@ export default class Search {
 
             if (searchResult.search) {
                 $("#chat-search").show();
+                $("#top-search").show();
 
                 search.appendContent(searchContainer, searchResult.search);
+                search.appendContent(topContainer, searchResult.top);
                 vote.setVoteEvent();
             }
         });

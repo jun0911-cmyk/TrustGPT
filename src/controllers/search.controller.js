@@ -78,7 +78,7 @@ module.exports = async function search(req, res, next) {
             for (let j = 0; j < topVote.length; j++) {
                 const top = topVote[j].dataValues;
 
-                const isVerify = originService.isVerifyOrigin(top.link);
+                const isVerify = await originService.isVerifyOrigin(top.link);
                 
                 topVoteResult.push({
                     link: top.link,
@@ -87,7 +87,21 @@ module.exports = async function search(req, res, next) {
                 });
             }
 
-            searchResult.sort((a, b) => b.vote_cnt - a.vote_cnt);
+            searchResult.sort((a, b) => {
+                if (b.verify_origin - a.verify_origin !== 0) {
+                    return b.verify_origin - a.verify_origin;
+                } else {
+                    return b.vote_cnt - a.vote_cnt;
+                }
+            });
+
+            topVoteResult.sort((a, b) => {
+                if (b.verify_origin - a.verify_origin !== 0) {
+                    return b.verify_origin - a.verify_origin;
+                } else {
+                    return b.vote_cnt - a.vote_cnt;
+                }
+            });
 
             return res.json({
                 isSearched: true,

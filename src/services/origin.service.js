@@ -1,5 +1,6 @@
 const url = require("url");
 const models = require("../models");
+const VoteService = require("./vote.service.js");
 const Logger = require("../middlewares/log.middleware.js");
 
 const logger = new Logger();
@@ -48,14 +49,14 @@ module.exports = class OriginService {
         const row = await this.existOrigin(link);
 
         if (row) {
-            if (Number(row.dataValues) > 500) return true;
+            if (Number(row.dataValues.vote_cnt) > 500) return true;
             else return false;
         } else {
             return false;
         }
     }
 
-    async updateOrigin() {
+    async updateOrigin(username) {
         const origin = this.getHost();
 
         let originData = await this.existOrigin();
@@ -65,10 +66,15 @@ module.exports = class OriginService {
         const row = originData.dataValues;
 
         try {
+            const voteService = new VoteService();
+            const updateVoter = voteService.updateVoter(username, row.voter);
+
+            if (!updateVoter) return null;
+
             return await models.origin.update(
                 { 
                     vote_cnt: row.vote_cnt + 1,
-                    voter: voter,
+                    voter: updateVoter,
                 },
                 {
                     where: {

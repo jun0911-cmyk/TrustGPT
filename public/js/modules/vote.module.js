@@ -25,7 +25,7 @@ export default class Vote {
 
         if (voteBtn) {
             $(document).on("click", "#vote-btn", async function () {
-                const link = $(this).parent().parent().children().children()[2].id;
+                const link = $(this).parent().parent().children().children()[3].id;
 
                 const vote = new Vote();
 

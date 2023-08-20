@@ -163,3 +163,17 @@ notNull Violation: search.origin_host cannot be null
 [TIME : 1692372047128] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'keyword' at row 1
 [TIME : 1692372047134] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'keyword' at row 1
 [TIME : 1692372047139] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'keyword' at row 1
+[TIME : 1692543390745] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
+[TIME : 1692543731927] [error LOG] : Origin Table Update Error : ReferenceError: voter is not defined
+[TIME : 1692544108156] [error LOG] : Origin Table Update Error : SequelizeValidationError: notNull Violation: origin.voter cannot be null
+[TIME : 1692544114952] [error LOG] : Origin Table Update Error : SequelizeValidationError: notNull Violation: origin.voter cannot be null
+[TIME : 1692544118067] [error LOG] : Origin Table Update Error : SequelizeValidationError: notNull Violation: origin.voter cannot be null
+[TIME : 1692544120389] [error LOG] : Origin Table Update Error : SequelizeValidationError: notNull Violation: origin.voter cannot be null
+[TIME : 1692544121257] [error LOG] : Origin Table Update Error : SequelizeValidationError: notNull Violation: origin.voter cannot be null
+[TIME : 1692544164745] [error LOG] : Origin Table Update Error : SequelizeValidationError: notNull Violation: origin.voter cannot be null
+[TIME : 1692544165786] [error LOG] : Origin Table Update Error : SequelizeValidationError: notNull Violation: origin.voter cannot be null
+[TIME : 1692544583262] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
+[TIME : 1692544713683] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
+[TIME : 1692544843953] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
+[TIME : 1692544906972] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
+[TIME : 1692546851111] [error LOG] : sequelize searchDB insert error : SequelizeDatabaseError: Data too long for column 'link' at row 1
