@@ -33,7 +33,7 @@ export default class Search {
         }
     }
 
-    setEvent() {
+    setEvent(isHidden) {
         $(document).on("click", ".import_word", async function() {
             const importWord = $(this)[0].innerText;
             const searchContainer = document.getElementById("chat-search");
@@ -57,6 +57,8 @@ export default class Search {
             if (searchResult.search) {
                 $("#chat-search").show();
                 $("#top-search").show();
+
+                isHidden(false);
 
                 search.appendContent(searchContainer, searchResult.search);
                 search.appendContent(topContainer, searchResult.top);

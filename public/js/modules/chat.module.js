@@ -66,7 +66,7 @@ export default class Chat {
 
         messageCount += 1;
 
-        messageContainer.innerHTML += `<p>assistant : <chat id="${messageCount}"></chat></p>`;
+        messageContainer.innerHTML += `<div class="chat" id="assistant"><p class="chat-role">\< GPT 3.5 Turbo \></p> <chat id="${messageCount}"></chat></div>`;
 
         const messageBox = document.getElementById(messageCount);
 

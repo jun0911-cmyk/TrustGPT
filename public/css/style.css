@@ -9,10 +9,9 @@ body {
     background-color: #f5f5f5;
 }
 .chat-container {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
-    background-color: #fff;
     border-radius: 5px;
     display: flex;
 }
@@ -22,29 +21,69 @@ body {
     flex-direction: column;
 }
 .history-header {
+    text-align: center;
     padding: 10px;
+    height: 3.2vh;
     border-bottom: 1px solid #ddd;
-    background-color: #f5f5f5;
+    background-color: #eaeef2;
 }
 .chat-header {
+    text-align: center;
     padding: 10px;
+    height: 5vh;
     border-bottom: 1px solid #ddd;
-    background-color: #f5f5f5;
+    background-color: #eaeef2;
+}
+.chat-header h2, .history-header h2 {
+    font-size: 17px;
+    font-weight:bold;
+}
+.history-header button {
+    margin-left: 0.5rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background-color: #FFF;
+    border: #FFF;
+    color: blue;
 }
 .chat-messages {
     flex-grow: 1;
-    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 30rem;
+    padding-right: 30rem;
     overflow-y: auto;
 }
+.chat {
+    margin-top: 1rem;
+}
+.chat-role {
+    color: rgb(59, 52, 52);
+    font-weight: 900;
+}
+#user {
+    border-radius: 2rem;
+    background-color: #eec2c2;
+    padding: 2rem;
+}
+#assistant {
+    border-radius: 2rem;
+    background-color: #eaeef2;
+    padding: 2rem;
+}
 .chat-input {
-    padding: 10px;
+    padding: 2rem;
     border-top: 1px solid #ddd;
     background-color: #f5f5f5;
     display: flex;
 }
 .chat-input input {
     flex-grow: 1;
+    height: 6vh;
     padding: 10px;
+    text-align: center;
+    font-weight: 900;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
@@ -61,17 +100,18 @@ body {
     background-color: #0056b3;
 }
 .chat-history {
-    width: 15%;
+    width: 30%;
     border-right: 1px solid #ddd;
+    background-color: #eaeef2;
     overflow-y: auto;
 }
 .chat-search {
-    width: 130%;
+    width: 100%;
     border-left: 1px solid #ddd;
     overflow-y: auto;
 }
 .top-search {
-    width: 130%;
+    width: 100%;
     border-left: 1px solid #ddd;
     overflow-y: auto;
 }
@@ -83,10 +123,16 @@ body {
     font-size: 15px;
     width: 100%;
     height: 3rem;
-    background-color: #99a8b9;
+    background-color: #FFF;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(255, 0, 0);
+    border: 1px solid black;
+    margin-top: 0.2rem;
+    border-radius: 5%;
+    cursor: pointer;
+}
+.history-list div:hover {
+    background-color: #ccb5b5;
 }
 .search-data {
     width: 100%;

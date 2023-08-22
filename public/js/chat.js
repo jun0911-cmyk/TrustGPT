@@ -8,9 +8,26 @@ const historyContainer = document.getElementById("history-list");
 const searchContainer = document.getElementById("chat-search");
 const topContainer = document.getElementById("top-search");
 
+const updateScroll = () => {
+    const content = document.getElementById("chat-messages");
+    content.scrollTop = content.scrollHeight;
+}
+
+const isHidden = (is_hide=true) => {
+    console.log(is_hide);
+
+    if (is_hide) {
+        messageContainer.style.paddingLeft = "30rem";
+        messageContainer.style.paddingRight = "30rem";
+    } else {
+        messageContainer.style.paddingLeft = "10rem";
+        messageContainer.style.paddingRight = "10rem";
+    }
+}
+
 const search = new Search();
 
-search.setEvent();
+search.setEvent(isHidden);
 
 $("#chat-search").hide();
 $("#top-search").hide();
@@ -18,6 +35,7 @@ $("#top-search").hide();
 document.addEventListener("DOMContentLoaded", async () => {
     const history = new Chat();
     const historyResult = await history.getHistory();
+    const content = document.getElementById("chat-messages");
 
     if (historyResult.historyList) {
         for (let j = 0; j < historyResult.historyList.length; j++) {
@@ -36,9 +54,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         const jsonHistory = JSON.parse(historyResult.history);
 
         for (let i = 1; i < jsonHistory.length; i++) {
-            messageContainer.innerHTML += `<p>${jsonHistory[i].role} : ${jsonHistory[i].content.replaceAll("\n", "</br>")}</p>`
+            messageContainer.innerHTML += `
+            <div class="chat" id="${jsonHistory[i].role}">
+                <p class="chat-role">${jsonHistory[i].role == "assistant" ? "< GPT 3.5 Turbo >" : "< USER >"}</p>
+                ${jsonHistory[i].content.replaceAll("\n", "</br>")}
+            </div>`
         }
     }
+
+    content.scrollTop = content.scrollHeight;
 });
 
 sendBtn.addEventListener("click", async () => {
@@ -46,7 +70,7 @@ sendBtn.addEventListener("click", async () => {
     const messageBox = document.getElementById("chat-input");
 
     messageBox.value = "";
-    messageContainer.innerHTML += `<p>user : ${message}</p>`;
+    messageContainer.innerHTML += `<div class="chat" id="user"><p class="chat-role">\< USER \></p> ${message}</div>`;
 
     const chat = new Chat(message);
     const search = new Search();
@@ -57,7 +81,10 @@ sendBtn.addEventListener("click", async () => {
     if (result.isMessage) {
         history.pushState({}, "", "/?chatID=" + result.chat_id);
         chat.addMessage(result.message, messageContainer);
-        search.setEvent();
+
+        updateScroll();
+
+        search.setEvent(isHidden);
 
         const summaryResult = await chat.summary(message);
         
@@ -73,6 +100,8 @@ sendBtn.addEventListener("click", async () => {
         if (searchResult.search && searchResult.top) {
             $("#chat-search").show();
             $("#top-search").show();
+
+            isHidden(false);
 
             search.appendContent(searchContainer, searchResult.search);
             search.appendContent(topContainer, searchResult.top);

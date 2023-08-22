@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/static/css/signup.css">
     <link rel="stylesheet" href="/static/css/login.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -15,20 +16,21 @@
     <div class="chat-container">
         <div class="chat-history" id="chat-history">
             <div class="history-header">
-                <h2>History</h2>
+                <h2>채팅 내역<button><i class="fa-solid fa-plus"></i></button></h2>
             </div>
+            <hr>
             <div class="history-list" id="history-list">
             </div>
         </div>
         <div class="chat-main">
             <div class="chat-header">
-                <h2>Chat with GPT</h2>
+                <h2>GPT 3.5 Turbo</h2>
             </div>
             <div class="chat-messages" id="chat-messages">
             </div>
             <div class="chat-input">
-                <input type="text" id="chat-input" placeholder="Type your message here..." />
-                <button id="send-button">Send</button>
+                <input type="text" id="chat-input" placeholder="궁금한 점을 무엇이든 물어보세요!, GPT가 답변해줄거에요!" />
+                <button id="send-button">보내기</button>
             </div>
         </div>
         <div class="chat-search" id="chat-search">
